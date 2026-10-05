@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <spdlog/spdlog.h>
+#include <fmt/format.h>
 #include <sstream>
 #include <optional>
 class parser{
@@ -77,6 +78,6 @@ int main() {
     parser p;
     auto result = p.parse_command("DELETE greeting");
     if (result) {
-        spdlog::info("Parsed key='{}'", result->key);
+        spdlog::info(fmt::format("Parsed key='{}'", result->key));
     }
 }
